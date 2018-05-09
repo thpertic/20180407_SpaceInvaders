@@ -1,0 +1,104 @@
+c:\users\st7888\Desktop\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.exe.config
+c:\users\st7888\Desktop\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.exe
+c:\users\st7888\Desktop\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.pdb
+c:\users\st7888\Desktop\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmSpaceInvaders.resources
+c:\users\st7888\Desktop\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.Properties.Resources.resources
+c:\users\st7888\Desktop\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csproj.GenerateResource.Cache
+c:\users\st7888\Desktop\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.exe
+c:\users\st7888\Desktop\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.pdb
+c:\users\st7888\Desktop\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csprojResolveAssemblyReference.cache
+G:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.exe.config
+G:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.exe
+G:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.pdb
+G:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.exe
+G:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.pdb
+G:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csprojResolveAssemblyReference.cache
+G:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmSpaceInvaders.resources
+G:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.Properties.Resources.resources
+G:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csproj.GenerateResource.Cache
+F:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.exe.config
+F:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.exe
+F:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.pdb
+F:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csprojResolveAssemblyReference.cache
+F:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmSpaceInvaders.resources
+F:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.Properties.Resources.resources
+F:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csproj.GenerateResource.cache
+F:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.exe
+F:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.pdb
+I:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.exe.config
+I:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.exe
+I:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.pdb
+I:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csprojResolveAssemblyReference.cache
+I:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmSpaceInvaders.resources
+I:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.Properties.Resources.resources
+I:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csproj.GenerateResource.cache
+I:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csproj.CoreCompileInputs.cache
+I:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.exe
+I:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.pdb
+E:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.exe.config
+E:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.exe
+E:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.pdb
+E:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csprojResolveAssemblyReference.cache
+E:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmSpaceInvaders.resources
+E:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.Properties.Resources.resources
+E:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csproj.GenerateResource.Cache
+E:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.exe
+E:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.pdb
+F:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csproj.CoreCompileInputs.cache
+C:\Users\Thomas\Desktop\20180407_SpaceInvaders\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.exe.config
+C:\Users\Thomas\Desktop\20180407_SpaceInvaders\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.exe
+C:\Users\Thomas\Desktop\20180407_SpaceInvaders\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.pdb
+C:\Users\Thomas\Desktop\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csprojResolveAssemblyReference.cache
+C:\Users\Thomas\Desktop\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmSpaceInvaders.resources
+C:\Users\Thomas\Desktop\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.Properties.Resources.resources
+C:\Users\Thomas\Desktop\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csproj.GenerateResource.cache
+C:\Users\Thomas\Desktop\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csproj.CoreCompileInputs.cache
+C:\Users\Thomas\Desktop\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.exe
+C:\Users\Thomas\Desktop\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.pdb
+C:\Users\Thomas\Desktop\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.exe.config
+C:\Users\Thomas\Desktop\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.exe
+C:\Users\Thomas\Desktop\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.pdb
+C:\Users\Thomas\Desktop\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csprojResolveAssemblyReference.cache
+C:\Users\Thomas\Desktop\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmSpaceInvaders.resources
+C:\Users\Thomas\Desktop\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.Properties.Resources.resources
+C:\Users\Thomas\Desktop\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csproj.GenerateResource.cache
+C:\Users\Thomas\Desktop\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csproj.CoreCompileInputs.cache
+C:\Users\Thomas\Desktop\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.exe
+C:\Users\Thomas\Desktop\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.pdb
+C:\Users\st7888\Desktop\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.exe.config
+C:\Users\st7888\Desktop\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.exe
+C:\Users\st7888\Desktop\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.pdb
+C:\Users\st7888\Desktop\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.exe
+C:\Users\st7888\Desktop\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.pdb
+C:\Users\st7888\Desktop\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csprojResolveAssemblyReference.cache
+C:\Users\st7888\Desktop\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmSpaceInvaders.resources
+C:\Users\st7888\Desktop\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.Properties.Resources.resources
+C:\Users\st7888\Desktop\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csproj.GenerateResource.Cache
+F:\Scuola\Informatica 3\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.exe.config
+F:\Scuola\Informatica 3\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.exe
+F:\Scuola\Informatica 3\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.pdb
+F:\Scuola\Informatica 3\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csprojResolveAssemblyReference.cache
+F:\Scuola\Informatica 3\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmSpaceInvaders.resources
+F:\Scuola\Informatica 3\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.Properties.Resources.resources
+F:\Scuola\Informatica 3\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csproj.GenerateResource.cache
+F:\Scuola\Informatica 3\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.exe
+F:\Scuola\Informatica 3\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.pdb
+E:\Scuola\Informatica 3\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.exe.config
+E:\Scuola\Informatica 3\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.exe
+E:\Scuola\Informatica 3\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.pdb
+E:\Scuola\Informatica 3\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.exe
+E:\Scuola\Informatica 3\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.pdb
+E:\Scuola\Informatica 3\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csprojResolveAssemblyReference.cache
+E:\Scuola\Informatica 3\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmSpaceInvaders.resources
+E:\Scuola\Informatica 3\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.Properties.Resources.resources
+E:\Scuola\Informatica 3\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csproj.GenerateResource.Cache
+D:\Scuola\Informatica 3\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.exe.config
+D:\Scuola\Informatica 3\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.exe
+D:\Scuola\Informatica 3\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.pdb
+D:\Scuola\Informatica 3\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csprojResolveAssemblyReference.cache
+D:\Scuola\Informatica 3\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmSpaceInvaders.resources
+D:\Scuola\Informatica 3\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.Properties.Resources.resources
+D:\Scuola\Informatica 3\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csproj.GenerateResource.cache
+D:\Scuola\Informatica 3\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csproj.CoreCompileInputs.cache
+D:\Scuola\Informatica 3\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.exe
+D:\Scuola\Informatica 3\C#\20180407_SpaceInvadersCorrente\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.pdb
