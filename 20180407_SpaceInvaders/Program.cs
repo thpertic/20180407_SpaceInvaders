@@ -8,7 +8,7 @@ namespace _20180407_SpaceInvaders
 {
     static class Program
     {
-
+        public static int score = 0;
         /// <summary>
         /// Punto di ingresso principale dell'applicazione.
         /// </summary>
