@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCaricamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCaricamento.Designer.cs">
+      <DependentUpon>frmCaricamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGioco.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCaricamento.resx">
+      <DependentUpon>frmCaricamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGioco.resx">
       <DependentUpon>frmGioco.cs</DependentUpon>
     </EmbeddedResource>

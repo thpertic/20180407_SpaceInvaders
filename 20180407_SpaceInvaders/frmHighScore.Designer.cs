@@ -28,50 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
             this.lblNumScore = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtNome
             // 
-            this.textBox1.Location = new System.Drawing.Point(87, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(232, 24);
-            this.textBox1.TabIndex = 0;
+            this.txtNome.Font = new System.Drawing.Font("Lucida Console", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.Location = new System.Drawing.Point(87, 21);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(59, 28);
+            this.txtNome.TabIndex = 0;
+            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.Font = new System.Drawing.Font("Lucida Console", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNome.ForeColor = System.Drawing.SystemColors.Control;
             this.lblNome.Location = new System.Drawing.Point(12, 21);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(56, 18);
+            this.lblNome.Size = new System.Drawing.Size(62, 21);
             this.lblNome.TabIndex = 1;
             this.lblNome.Text = "Nome";
             // 
             // lblScore
             // 
             this.lblScore.AutoSize = true;
-            this.lblScore.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScore.Font = new System.Drawing.Font("Lucida Console", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScore.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblScore.Location = new System.Drawing.Point(12, 64);
+            this.lblScore.Location = new System.Drawing.Point(12, 70);
             this.lblScore.Name = "lblScore";
-            this.lblScore.Size = new System.Drawing.Size(54, 18);
+            this.lblScore.Size = new System.Drawing.Size(75, 21);
             this.lblScore.TabIndex = 2;
             this.lblScore.Text = "Score";
             // 
             // lblNumScore
             // 
             this.lblNumScore.AutoSize = true;
-            this.lblNumScore.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumScore.Font = new System.Drawing.Font("Lucida Console", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumScore.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblNumScore.Location = new System.Drawing.Point(83, 60);
+            this.lblNumScore.Location = new System.Drawing.Point(93, 70);
             this.lblNumScore.Name = "lblNumScore";
-            this.lblNumScore.Size = new System.Drawing.Size(63, 23);
+            this.lblNumScore.Size = new System.Drawing.Size(75, 21);
             this.lblNumScore.TabIndex = 3;
             this.lblNumScore.Text = "prova";
             // 
@@ -95,8 +97,9 @@
             this.Controls.Add(this.lblNumScore);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.lblNome);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNome);
             this.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MinimumSize = new System.Drawing.Size(347, 179);
             this.Name = "frmHighScore";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Punteggio Massimo";
@@ -108,7 +111,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label lblScore;
         private System.Windows.Forms.Label lblNumScore;

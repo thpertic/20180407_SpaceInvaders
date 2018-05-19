@@ -35,6 +35,7 @@
             this.timeMove = new System.Windows.Forms.Timer(this.components);
             this.lblPunteggio = new System.Windows.Forms.Label();
             this.lblMassimoPunteggio = new System.Windows.Forms.Label();
+            this.timeColpito = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictSpaceship)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,11 +55,11 @@
             // 
             this.lblScore.AutoSize = true;
             this.lblScore.BackColor = System.Drawing.Color.Transparent;
-            this.lblScore.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScore.Font = new System.Drawing.Font("Lucida Console", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScore.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblScore.Location = new System.Drawing.Point(34, 9);
             this.lblScore.Name = "lblScore";
-            this.lblScore.Size = new System.Drawing.Size(75, 23);
+            this.lblScore.Size = new System.Drawing.Size(74, 20);
             this.lblScore.TabIndex = 39;
             this.lblScore.Text = "SCORE";
             // 
@@ -66,11 +67,11 @@
             // 
             this.lblHiScore.AutoSize = true;
             this.lblHiScore.BackColor = System.Drawing.Color.Transparent;
-            this.lblHiScore.Font = new System.Drawing.Font("Courier New", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHiScore.Font = new System.Drawing.Font("Lucida Console", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHiScore.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblHiScore.Location = new System.Drawing.Point(464, 9);
+            this.lblHiScore.Location = new System.Drawing.Point(432, 9);
             this.lblHiScore.Name = "lblHiScore";
-            this.lblHiScore.Size = new System.Drawing.Size(106, 23);
+            this.lblHiScore.Size = new System.Drawing.Size(113, 20);
             this.lblHiScore.TabIndex = 40;
             this.lblHiScore.Text = "HI-SCORE";
             // 
@@ -83,11 +84,11 @@
             // 
             this.lblPunteggio.AutoSize = true;
             this.lblPunteggio.BackColor = System.Drawing.Color.Transparent;
-            this.lblPunteggio.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPunteggio.Font = new System.Drawing.Font("Lucida Console", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPunteggio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblPunteggio.Location = new System.Drawing.Point(115, 9);
             this.lblPunteggio.Name = "lblPunteggio";
-            this.lblPunteggio.Size = new System.Drawing.Size(23, 23);
+            this.lblPunteggio.Size = new System.Drawing.Size(22, 20);
             this.lblPunteggio.TabIndex = 41;
             this.lblPunteggio.Text = "0";
             // 
@@ -95,13 +96,18 @@
             // 
             this.lblMassimoPunteggio.AutoSize = true;
             this.lblMassimoPunteggio.BackColor = System.Drawing.Color.Transparent;
-            this.lblMassimoPunteggio.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMassimoPunteggio.Font = new System.Drawing.Font("Lucida Console", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMassimoPunteggio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblMassimoPunteggio.Location = new System.Drawing.Point(576, 9);
+            this.lblMassimoPunteggio.Location = new System.Drawing.Point(544, 9);
             this.lblMassimoPunteggio.Name = "lblMassimoPunteggio";
-            this.lblMassimoPunteggio.Size = new System.Drawing.Size(23, 23);
+            this.lblMassimoPunteggio.Size = new System.Drawing.Size(22, 20);
             this.lblMassimoPunteggio.TabIndex = 42;
             this.lblMassimoPunteggio.Text = "0";
+            // 
+            // timeColpito
+            // 
+            this.timeColpito.Interval = 100000;
+            this.timeColpito.Tick += new System.EventHandler(this.timeColpito_Tick);
             // 
             // frmSpaceInvaders
             // 
@@ -136,6 +142,7 @@
         private System.Windows.Forms.Timer timeMove;
         private System.Windows.Forms.Label lblPunteggio;
         private System.Windows.Forms.Label lblMassimoPunteggio;
+        private System.Windows.Forms.Timer timeColpito;
     }
 }
 

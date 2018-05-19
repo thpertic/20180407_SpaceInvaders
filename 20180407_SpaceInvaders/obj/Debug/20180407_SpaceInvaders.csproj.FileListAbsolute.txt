@@ -43,7 +43,6 @@ E:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Deb
 E:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csproj.GenerateResource.Cache
 E:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.exe
 E:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.pdb
-F:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csproj.CoreCompileInputs.cache
 C:\Users\Thomas\Desktop\20180407_SpaceInvaders\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.exe.config
 C:\Users\Thomas\Desktop\20180407_SpaceInvaders\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.exe
 C:\Users\Thomas\Desktop\20180407_SpaceInvaders\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.pdb
@@ -114,3 +113,8 @@ G:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Deb
 G:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmStart.resources
 G:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csprojAssemblyReference.cache
 G:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csproj.CoreCompileInputs.cache
+E:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmHighScore.resources
+E:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmStart.resources
+F:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmHighScore.resources
+F:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmStart.resources
+G:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmCaricamento.resources
