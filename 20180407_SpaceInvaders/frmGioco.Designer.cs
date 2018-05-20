@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSpaceInvaders));
             this.pictSpaceship = new System.Windows.Forms.PictureBox();
             this.lblScore = new System.Windows.Forms.Label();
             this.lblHiScore = new System.Windows.Forms.Label();
@@ -69,11 +70,11 @@
             this.lblHiScore.BackColor = System.Drawing.Color.Transparent;
             this.lblHiScore.Font = new System.Drawing.Font("Lucida Console", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHiScore.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblHiScore.Location = new System.Drawing.Point(432, 9);
+            this.lblHiScore.Location = new System.Drawing.Point(399, 9);
             this.lblHiScore.Name = "lblHiScore";
-            this.lblHiScore.Size = new System.Drawing.Size(113, 20);
+            this.lblHiScore.Size = new System.Drawing.Size(139, 20);
             this.lblHiScore.TabIndex = 40;
-            this.lblHiScore.Text = "HI-SCORE";
+            this.lblHiScore.Text = "HIGH-SCORE";
             // 
             // timeMove
             // 
@@ -120,6 +121,7 @@
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.pictSpaceship);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSpaceInvaders";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Space Invaders";

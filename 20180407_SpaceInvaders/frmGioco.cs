@@ -19,30 +19,28 @@ namespace _20180407_SpaceInvaders
         // conto intermittenza
         private byte nFlash;
 
+        // contatori
         private byte i;
         private byte j;
 
-        private byte alienoPrecedente = 0;
-        private byte alienoCorrente;
-
-        const int sleep = 5000;
-        const byte nAlieni = 21;
+        private const int sleep = 5000;
+        private const byte nAlieni = 21;
         private const byte lungOb = 18, altOb = 8;
 
         List<PictureBox> listaFuoco = new List<PictureBox>();
         List<PictureBox> listaFuocoNemico = new List<PictureBox>();
-        List<Control> aliens = new List<Control>(nAlieni);
 
-        Random rand = new Random();
+        List<Control> aliens = new List<Control>(nAlieni);
 
         List<List<PictureBox>> obstacle = new List<List<PictureBox>>(lungOb);
         List<List<PictureBox>> obstacle1 = new List<List<PictureBox>>(lungOb);
 
+        Random rand = new Random();
+
         private bool _moveLeft;
         private bool _moveRight;
 
-        private bool creati = false;
-        private bool nuovoLivello = false;
+        private bool creati;
         private bool invincibile = false;
 
         private int x, y;
@@ -102,14 +100,12 @@ namespace _20180407_SpaceInvaders
         /// <param name="e"></param>
         private void timeMove_Tick(object sender, EventArgs e)
         {
-            // if (creati)
-            //     mostraLivello(sleep);
-
             lblPunteggio.Text = Program.score.ToString();
             lblMassimoPunteggio.Text = maxName + " " + maxScore.ToString();
 
             // muove la nave
-            moveShip();
+            if(creati)
+                moveShip();
 
             stampaVita(true);
 
@@ -117,9 +113,7 @@ namespace _20180407_SpaceInvaders
             Control[] alieni = this.Controls.Find("alien", true);
             Control[] ostacoli = this.Controls.Find("obstacle", true);
 
-
-
-            if (alieni.Length > 0 )//|| creati)
+            if (alieni.Length > 0)//|| creati)
             {
                 bool boolAlieno = false;
                 // ciclo principale per il movimento e le intersezioni del fuoco del player
@@ -132,17 +126,15 @@ namespace _20180407_SpaceInvaders
                     for (j = (byte)alieni.Length; j > 0 && !boolAlieno; j--)
                         if (Colpito(listaFuoco[i - 1], alieni[j - 1]))
                         {
-                            // se il fuoco lo colpisce aumenta il fuoco
+                            // se il fuoco lo colpisce aumenta lo score
                             Program.score++;
                             if (Program.score > maxScore)
                             {
                                 maxName = "---";
                                 maxScore = Program.score;
-                            }                             
 
-
-                            if (alieni.Length == 0)
-                                nuovoLivello = true;
+                                Program.max = true;
+                            }
 
                             // elimina tutti gli oggetti che collidono
                             eliminaOggetto(alieni[j - 1]);
@@ -157,7 +149,7 @@ namespace _20180407_SpaceInvaders
                     for (int j = ostacoli.Length; j > 0 && !boolOstacolo && !boolAlieno; j--)
                         if (Colpito(listaFuoco[i - 1], ostacoli[j - 1]))
                         {
-                            // testa quale ostacolo
+                            // testa se e' l'ostacolo di destra o di sinistra
                             if (ostacoli[j - 1].Location.X < this.Width)
                             {
                                 // cerca per ogni "pixel" di ostacolo
@@ -190,7 +182,7 @@ namespace _20180407_SpaceInvaders
                             listaFuoco.Remove(listaFuoco[i - 1]);
                             boolOstacolo = true;
                         }
-                    if(listaFuoco.Count > 0 && !(boolAlieno || boolOstacolo))
+                    if (listaFuoco.Count > 0 && !(boolAlieno || boolOstacolo))
                     {
                         listaFuoco[i - 1].Top -= 15;
 
@@ -203,14 +195,14 @@ namespace _20180407_SpaceInvaders
                 }
 
                 //ciclo per il fuoco avversario
-                for (i = (byte)listaFuocoNemico.Count; i > 0 ; i--)
+                for (i = (byte)listaFuocoNemico.Count; i > 0; i--)
                 {
                     bool boolPlayer = false;
                     bool boolOstacolo = false;
 
                     // cerca la collisioni con la navicella
                     if (Colpito(listaFuocoNemico[i - 1], giocatore[0]) && !invincibile)
-                    { 
+                    {
                         if (!invincibile)
                             life--;
                         invincibile = true;
@@ -218,24 +210,35 @@ namespace _20180407_SpaceInvaders
                         if (life == 0)
                         {
                             perso();
-
-                            Thread.CurrentThread.Abort();
-                            Close();
-                            Dispose();
-
-                            // break;
+                            Application.Exit();
                         }
                         stampaVita(false);
 
                         // invincibilità - respawn a intermittenza nave
                         intermittenza();
 
-                        // elimina tutti gli oggetti che collidono
-                        eliminaOggetto(listaFuocoNemico[i - 1]);
-                        listaFuocoNemico.Remove(listaFuocoNemico[i - 1]);
+                        try
+                        {
+                            // elimina tutti gli oggetti che collidono
+                            eliminaOggetto(listaFuocoNemico[i - 1]);
+                            listaFuocoNemico.Remove(listaFuocoNemico[i - 1]);
+                        }
+                        catch
+                        {
+                            // se arriva qui significa che la i e' troppo piccola o troppo grande
+                            if (i > listaFuocoNemico.Count - 1)
+                            {
+                                eliminaOggetto(listaFuocoNemico[i - 2]);
+                                listaFuocoNemico.Remove(listaFuocoNemico[i - 2]);
+                            }
+                            else
+                            {
+                                eliminaOggetto(listaFuocoNemico[i]);
+                                listaFuocoNemico.Remove(listaFuocoNemico[i]);
+                            }
+                        }
 
                         boolPlayer = true;
-
                     }
                     for (int j = ostacoli.Length; j > 0 && !boolOstacolo && !boolPlayer; j--)
                         if (Colpito(listaFuocoNemico[i - 1], ostacoli[j - 1]))
@@ -280,18 +283,12 @@ namespace _20180407_SpaceInvaders
                             eliminaOggetto(listaFuocoNemico[i - 1]);
                     }
                 }
-
+                /***********************************************************************************************************************************************************************/
+                // DIVIDE BY 0 EXCEPTION
                 if (stopwatch.ElapsedTicks % rateFuoco == 0)
                 {
                     // sceglie un avversario random e lo fa sparare
-                    Control control;
-                    do
-                    {
-                        alienoCorrente = (byte)rand.Next(0, alieni.Length - 1);
-                        control = alieni[alienoCorrente];
-                    } while (alienoPrecedente == alienoCorrente);
-                    alienoPrecedente = alienoCorrente;
-
+                    Control control = alieni[(byte)rand.Next(0, alieni.Length - 1)];
                     var fuocoNemico = new PictureBox
                     {
                         Name = "fuocoNemico",
@@ -305,21 +302,13 @@ namespace _20180407_SpaceInvaders
                     this.Controls.Add(fuocoNemico);
                     listaFuocoNemico.Add(fuocoNemico);
                 }
-                
-                // PROBLEMA: QUANDO SI SVUOTA L'ARRAY DEGLI ALIENI ENTRA SEMPRE IN BORDO = TRUE
-                // DIREZIONEALIENI VA SEMPRE A 1
-                // OGNI VOLTA DI SPOSTAMENTO() VIENE CAMBIATO ANCHE 
 
-                /***************************************************************************************************************
-                 * CICLO CONTROLLA 1/3 ALIENI A SECONDA DELLA DIREZIONE
-                 */
-                
                 // controllo dell'alieno piu esterno a seconda della direzioneAlieni
                 Control alienoBordo = alieni[0];
                 int m = alieni[0].Location.X;
 
                 // trova l'alieno al bordo
-                for(i = 1; i < alieni.Length; i++)
+                for (i = 1; i < alieni.Length; i++)
                 {
                     if (direzioneAlieni < 0)
                     {
@@ -337,9 +326,9 @@ namespace _20180407_SpaceInvaders
                             alienoBordo = alieni[i];
                         }
                     }
-                }             
+                }
 
-                // ciclo per il movimento degli alieni
+                // movimento degli alieni
                 for (i = 0; i < alieni.Length; i++)
                     alieni[i].Left += direzioneAlieni;
 
@@ -350,40 +339,27 @@ namespace _20180407_SpaceInvaders
                     if (alienoBordo.Location.X <= 50)
                         bordo = true;
                 }
-                else if(direzioneAlieni > 0)
+                else if (direzioneAlieni > 0)
                 {
                     if (alienoBordo.Location.X + 41 >= this.Width - 50)
                         bordo = true;
                 }
-                
+
                 if (bordo)
                 {
                     for (i = 0; i < alieni.Length; i++)
                         spostamento(alieni[i]);
                     direzioneAlieni = -direzioneAlieni;
                 }
-
-                creati = false;
             }
-            if(nuovoLivello)
+            else if(creati)
             {
                 level++;
-                rateFuoco -= 5;
+                rateFuoco -= 10;
+                direzioneAlieni += direzioneAlieni / 2;
 
                 DistruggiOggetti();
                 CreaOggettiAsync();
-
-                mostraLivello(sleep);
-
-                
-                // TUTTI GLI OGGETTI .DISPOSE()
-                // POSSIBILE ANCHE FARLO ASINCRONO
-
-                // POI CREAOGGETTIASYNC()
-                
-                //MessageBox.Show("Hai vinto!");
-                // System.Threading.Thread.Sleep(sleep);
-                // CreaOggettiAsync(sender, e);
             }
 
         }
@@ -410,42 +386,12 @@ namespace _20180407_SpaceInvaders
 
         private void perso()
         {
-            // TODO: Mettere in pausa il thread
-            // bool flag = false;
-
-            // while (!flag)
-            // {
             timeMove.Stop();
 
-            // int perso = await Task<int>.Run(() =>
-            // {
-                MessageBox.Show("Hai perso!");
-                Form frmHighScore = new frmHighScore();
-                frmHighScore.ShowDialog();
+            Form frmHighScore = new frmHighScore();
+            frmHighScore.ShowDialog();
 
-                // scrittura su file
-                if (File.Exists(Program.filename))
-                {
-                    StreamWriter FileW = new StreamWriter(Program.filename);
-                    FileW.Write(Program.score);
-                    FileW.Close();
-                }
-                else
-                {
-                    FileStream FileC = new FileStream(Program.filename, FileMode.Create);
-                    FileC.Close();
-
-                    StreamWriter FileW = new StreamWriter(Program.filename);
-                    FileW.Write(Program.score);
-                    FileW.Close();
-                }
-
-                // flag = true;
-                // return 1;
-            // });
             timeMove.Start();
-            // System.Threading.Thread.Sleep(1);
-            // }
         }
 
         private void spostamento(Control alieno)
@@ -564,7 +510,7 @@ namespace _20180407_SpaceInvaders
             {
                 AutoSize = true,
                 Name = "Level",
-                Text = "Level 0" + level,
+                Text = "Level " + level,
                 Location = new Point(250, 338),
                 BackColor = Color.White,
                 ForeColor = Color.Black,
@@ -589,9 +535,17 @@ namespace _20180407_SpaceInvaders
         {
             // Control[] alieni = this.Controls.Find("alien", true);
             Control[] ostacoli = this.Controls.Find("obstacle", true);
+            Control[] fuoco = this.Controls.Find("fire", true);
 
+            // eliminazione del fuoco e degli ostacoli
+             for (int i = 0; i < fuoco.Length; i++)
+                 this.Controls.Remove(fuoco[i]);
             for(int i = 0; i < ostacoli.Length; i++)
                 this.Controls.Remove(ostacoli[i]);
+
+            // cancellazione ulteriore dalle liste del fuoco
+            // listaFuoco.Clear();
+            // listaFuocoNemico.Clear();
         }
 
         /************************************************************************************
@@ -603,8 +557,8 @@ namespace _20180407_SpaceInvaders
          */
         private async void CreaOggettiAsync()
         {
-            creati = true;
             life = 3;
+            creati = false;
 
             Form frmCaricamento = new frmCaricamento();
             frmCaricamento.Show();
@@ -659,10 +613,6 @@ namespace _20180407_SpaceInvaders
                     // obstacle[i] = new List<PictureBox>(lungOb);
                     for (j = 0; j < lungOb; j++)
                     {
-                        // I TORNA A 0??
-
-
-
                         // crea un particolare di ostacolo, con tutte le proprietà
                         var ostacolo = new PictureBox
                         {
@@ -737,6 +687,8 @@ namespace _20180407_SpaceInvaders
                 this.Controls.Add(oggetti[i]);
 
             mostraLivello(100);
+
+            creati = true;
         }
     }
 }

@@ -19,7 +19,7 @@ namespace _20180407_SpaceInvaders.Properties {
     // tramite uno strumento quale ResGen o Visual Studio.
     // Per aggiungere o rimuovere un membro, modificare il file con estensione ResX ed eseguire nuovamente ResGen
     // con l'opzione /str oppure ricompilare il progetto VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -83,9 +83,9 @@ namespace _20180407_SpaceInvaders.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap press_start {
+        internal static System.Drawing.Bitmap game_over {
             get {
-                object obj = ResourceManager.GetObject("press-start", resourceCulture);
+                object obj = ResourceManager.GetObject("game-over", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace _20180407_SpaceInvaders.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap sfondo {
+        internal static System.Drawing.Bitmap press_start {
             get {
-                object obj = ResourceManager.GetObject("sfondo", resourceCulture);
+                object obj = ResourceManager.GetObject("press-start", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -29,35 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStart));
-            this.pictSpaceInvaders = new System.Windows.Forms.PictureBox();
-            this.pictPressStart = new System.Windows.Forms.PictureBox();
             this.lblHIGHSCORE = new System.Windows.Forms.Label();
             this.lblNumHIGHSCORE = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictSpaceInvaders)).BeginInit();
+            this.pictPressStart = new System.Windows.Forms.PictureBox();
+            this.pictSpaceInvaders = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictPressStart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictSpaceInvaders)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictSpaceInvaders
-            // 
-            this.pictSpaceInvaders.Image = ((System.Drawing.Image)(resources.GetObject("pictSpaceInvaders.Image")));
-            this.pictSpaceInvaders.InitialImage = global::_20180407_SpaceInvaders.Properties.Resources.space_invaders_logo;
-            this.pictSpaceInvaders.Location = new System.Drawing.Point(64, 12);
-            this.pictSpaceInvaders.Name = "pictSpaceInvaders";
-            this.pictSpaceInvaders.Size = new System.Drawing.Size(417, 125);
-            this.pictSpaceInvaders.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictSpaceInvaders.TabIndex = 0;
-            this.pictSpaceInvaders.TabStop = false;
-            // 
-            // pictPressStart
-            // 
-            this.pictPressStart.Image = global::_20180407_SpaceInvaders.Properties.Resources.press_start;
-            this.pictPressStart.Location = new System.Drawing.Point(205, 198);
-            this.pictPressStart.Name = "pictPressStart";
-            this.pictPressStart.Size = new System.Drawing.Size(100, 50);
-            this.pictPressStart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictPressStart.TabIndex = 1;
-            this.pictPressStart.TabStop = false;
-            this.pictPressStart.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // lblHIGHSCORE
             // 
@@ -81,6 +59,27 @@
             this.lblNumHIGHSCORE.TabIndex = 3;
             this.lblNumHIGHSCORE.Text = "prova";
             // 
+            // pictPressStart
+            // 
+            this.pictPressStart.Image = ((System.Drawing.Image)(resources.GetObject("pictPressStart.Image")));
+            this.pictPressStart.Location = new System.Drawing.Point(205, 198);
+            this.pictPressStart.Name = "pictPressStart";
+            this.pictPressStart.Size = new System.Drawing.Size(113, 55);
+            this.pictPressStart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictPressStart.TabIndex = 1;
+            this.pictPressStart.TabStop = false;
+            this.pictPressStart.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictSpaceInvaders
+            // 
+            this.pictSpaceInvaders.Image = ((System.Drawing.Image)(resources.GetObject("pictSpaceInvaders.Image")));
+            this.pictSpaceInvaders.Location = new System.Drawing.Point(47, 12);
+            this.pictSpaceInvaders.Name = "pictSpaceInvaders";
+            this.pictSpaceInvaders.Size = new System.Drawing.Size(439, 159);
+            this.pictSpaceInvaders.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictSpaceInvaders.TabIndex = 0;
+            this.pictSpaceInvaders.TabStop = false;
+            // 
             // frmStart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -91,14 +90,16 @@
             this.Controls.Add(this.lblHIGHSCORE);
             this.Controls.Add(this.pictPressStart);
             this.Controls.Add(this.pictSpaceInvaders);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmStart";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Start";
             this.Load += new System.EventHandler(this.frmStart_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictSpaceInvaders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictPressStart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictSpaceInvaders)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

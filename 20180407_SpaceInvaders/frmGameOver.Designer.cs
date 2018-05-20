@@ -1,6 +1,6 @@
 ﻿namespace _20180407_SpaceInvaders
 {
-    partial class frmCaricamento
+    partial class frmGameOver
     {
         /// <summary>
         /// Required designer variable.
@@ -29,45 +29,31 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pgbCaricamento = new System.Windows.Forms.ProgressBar();
-            this.timeCaricamento = new System.Windows.Forms.Timer(this.components);
+            this.timeGameOver = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
-            // pgbCaricamento
-            // 
-            this.pgbCaricamento.Location = new System.Drawing.Point(12, 12);
-            this.pgbCaricamento.Maximum = 312;
-            this.pgbCaricamento.Name = "pgbCaricamento";
-            this.pgbCaricamento.Size = new System.Drawing.Size(412, 36);
-            this.pgbCaricamento.TabIndex = 0;
-            // 
-            // timeCaricamento
-            // 
-            this.timeCaricamento.Tick += new System.EventHandler(this.timeCaricamento_Tick);
-            // 
-            // frmCaricamento
+            // frmGameOver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(436, 60);
-            this.Controls.Add(this.pgbCaricamento);
+            this.BackgroundImage = global::_20180407_SpaceInvaders.Properties.Resources.game_over;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1102, 596);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "frmCaricamento";
+            this.Name = "frmGameOver";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmCaricamento";
-            this.Load += new System.EventHandler(this.frmCaricamento_Load);
+            this.Text = "frmGameOver";
+            this.Click += new System.EventHandler(this.frmGameOver_Click);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ProgressBar pgbCaricamento;
-        private System.Windows.Forms.Timer timeCaricamento;
+        private System.Windows.Forms.Timer timeGameOver;
     }
 }

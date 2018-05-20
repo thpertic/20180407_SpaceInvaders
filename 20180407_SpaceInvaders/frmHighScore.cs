@@ -20,25 +20,35 @@ namespace _20180407_SpaceInvaders
 
         private void frmHighScore_Load(object sender, EventArgs e)
         {
+            this.Hide();
+
+            Form frmGameOver = new frmGameOver();
+            frmGameOver.ShowDialog();
+
+            if (!Program.max)
+                Close();
+
             lblNumScore.Text = Program.score.ToString();
+            this.Activate();
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
             if (txtNome.Text.Length == 3)
-                if (File.Exists(Program.filename))
             {
-                File.Decrypt(Program.filename);
+                if (File.Exists(Program.filename))
+                {
+                    File.Decrypt(Program.filename);
 
-                StreamWriter FileR = new StreamWriter(Program.filename);
-                FileR.Write(txtNome.Text + " " + Program.score.ToString());
-                FileR.Close();
+                    StreamWriter FileW = new StreamWriter(Program.filename);
+                    FileW.Write(txtNome.Text + " " + Program.score.ToString());
+                    FileW.Close();
+                }
 
-                File.Encrypt(Program.filename);
+                Close();
             }
             else
                 MessageBox.Show("Il nome può essere lungo solamente 3 caratteri.", "Si deve inserire tre caratteri.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            Close();
         }
 
         private void txtNome_TextChanged(object sender, EventArgs e)
@@ -47,6 +57,15 @@ namespace _20180407_SpaceInvaders
             {
                 txtNome.Text = txtNome.Text.Substring(0, 3);
             }
+
+            try
+            {
+                if (txtNome.Text[txtNome.Text.Length - 1] == ' ')
+                {
+                    txtNome.Text = txtNome.Text.Substring(0, txtNome.Text.Length - 2);
+                }
+            }
+            catch { }
         }
     }
 }
