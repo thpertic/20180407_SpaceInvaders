@@ -26,6 +26,9 @@ namespace _20180407_SpaceInvaders
         {
             this.BringToFront();
             pgbCaricamento.Value = Program.progress;
+
+            if (pgbCaricamento.Value == pgbCaricamento.Maximum)
+                Close();
         }
     }
 }

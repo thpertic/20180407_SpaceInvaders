@@ -106,7 +106,6 @@
             // 
             // timeColpito
             // 
-            this.timeColpito.Interval = 100000;
             this.timeColpito.Tick += new System.EventHandler(this.timeColpito_Tick);
             // 
             // frmSpaceInvaders

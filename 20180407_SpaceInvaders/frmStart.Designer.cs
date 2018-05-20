@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStart));
             this.pictSpaceInvaders = new System.Windows.Forms.PictureBox();
             this.pictPressStart = new System.Windows.Forms.PictureBox();
             this.lblHIGHSCORE = new System.Windows.Forms.Label();
@@ -38,11 +39,11 @@
             // 
             // pictSpaceInvaders
             // 
-            this.pictSpaceInvaders.Image = global::_20180407_SpaceInvaders.Properties.Resources.space_invaders_logo;
+            this.pictSpaceInvaders.Image = ((System.Drawing.Image)(resources.GetObject("pictSpaceInvaders.Image")));
             this.pictSpaceInvaders.InitialImage = global::_20180407_SpaceInvaders.Properties.Resources.space_invaders_logo;
-            this.pictSpaceInvaders.Location = new System.Drawing.Point(12, 12);
+            this.pictSpaceInvaders.Location = new System.Drawing.Point(64, 12);
             this.pictSpaceInvaders.Name = "pictSpaceInvaders";
-            this.pictSpaceInvaders.Size = new System.Drawing.Size(522, 158);
+            this.pictSpaceInvaders.Size = new System.Drawing.Size(417, 125);
             this.pictSpaceInvaders.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictSpaceInvaders.TabIndex = 0;
             this.pictSpaceInvaders.TabStop = false;
@@ -50,7 +51,7 @@
             // pictPressStart
             // 
             this.pictPressStart.Image = global::_20180407_SpaceInvaders.Properties.Resources.press_start;
-            this.pictPressStart.Location = new System.Drawing.Point(214, 205);
+            this.pictPressStart.Location = new System.Drawing.Point(205, 198);
             this.pictPressStart.Name = "pictPressStart";
             this.pictPressStart.Size = new System.Drawing.Size(100, 50);
             this.pictPressStart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

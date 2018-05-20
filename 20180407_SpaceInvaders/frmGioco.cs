@@ -25,7 +25,7 @@ namespace _20180407_SpaceInvaders
         private byte alienoPrecedente = 0;
         private byte alienoCorrente;
 
-        const int sleep = 4500;
+        const int sleep = 5000;
         const byte nAlieni = 21;
         private const byte lungOb = 18, altOb = 8;
 
@@ -89,9 +89,8 @@ namespace _20180407_SpaceInvaders
                 FileR.Close();
                 File.Encrypt(Program.filename);
             }
-
             CreaOggettiAsync();
-            // System.Threading.Thread.Sleep(sleep);
+
             timeMove.Start();
             stopwatch.Start();
         }
@@ -103,8 +102,8 @@ namespace _20180407_SpaceInvaders
         /// <param name="e"></param>
         private void timeMove_Tick(object sender, EventArgs e)
         {
-            if (creati)
-                mostraLivello(sleep);
+            // if (creati)
+            //     mostraLivello(sleep);
 
             lblPunteggio.Text = Program.score.ToString();
             lblMassimoPunteggio.Text = maxName + " " + maxScore.ToString();
@@ -117,6 +116,8 @@ namespace _20180407_SpaceInvaders
             Control[] giocatore = this.Controls.Find("pictSpaceship", true);
             Control[] alieni = this.Controls.Find("alien", true);
             Control[] ostacoli = this.Controls.Find("obstacle", true);
+
+
 
             if (alieni.Length > 0 )//|| creati)
             {
@@ -133,8 +134,12 @@ namespace _20180407_SpaceInvaders
                         {
                             // se il fuoco lo colpisce aumenta il fuoco
                             Program.score++;
-                            if (Program.score > maxScore)                                
+                            if (Program.score > maxScore)
+                            {
+                                maxName = "---";
                                 maxScore = Program.score;
+                            }                             
+
 
                             if (alieni.Length == 0)
                                 nuovoLivello = true;
@@ -204,7 +209,7 @@ namespace _20180407_SpaceInvaders
                     bool boolOstacolo = false;
 
                     // cerca la collisioni con la navicella
-                    if (Colpito(listaFuocoNemico[i - 1], giocatore[0]))
+                    if (Colpito(listaFuocoNemico[i - 1], giocatore[0]) && !invincibile)
                     { 
                         if (!invincibile)
                             life--;
@@ -223,9 +228,7 @@ namespace _20180407_SpaceInvaders
                         stampaVita(false);
 
                         // invincibilità - respawn a intermittenza nave
-                        // if(swColpito.ElapsedTicks % 3 == 0)
                         intermittenza();
-                        // intermittenza(giocatore[0]);
 
                         // elimina tutti gli oggetti che collidono
                         eliminaOggetto(listaFuocoNemico[i - 1]);
@@ -393,13 +396,16 @@ namespace _20180407_SpaceInvaders
         private void timeColpito_Tick(object sender, EventArgs e)
         {
             pictSpaceship.Visible = !pictSpaceship.Visible;
-            nFlash++;
-            /*
-            if(nFlash == 5)
+             nFlash++;
+            
+            if(nFlash == 10)
             {
-                timeColpito.Stop();
+                pictSpaceship.Visible = true;
                 invincibile = false;
-            }*/
+                nFlash = 0;
+
+                timeColpito.Stop();
+            }
         }
 
         private void perso()
@@ -548,28 +554,30 @@ namespace _20180407_SpaceInvaders
             listaFuoco.Add( fire);
         }
 
-        private void mostraLivello(int tempo)
+        /// <summary>
+        /// fissa la label con il numero del livello a schermo
+        /// </summary>
+        /// <param name="tempo"></param>
+        private async void mostraLivello(int tempo)
         {
             var l = new Label
             {
                 AutoSize = true,
                 Name = "Level",
                 Text = "Level 0" + level,
-                Location = new Point(264, 238),
+                Location = new Point(250, 338),
                 BackColor = Color.White,
                 ForeColor = Color.Black,
                 Font = new Font("Courier New", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
                 Visible = true
             };
-            // l.BringToFront();
+            l.BringToFront();
 
             Controls.Add(l);
+            await Task.Delay(tempo);
 
-            
-            // wait();
-
-
-           Controls.Remove(l);
+            Thread.Sleep(tempo * 12);
+            Controls.Remove(l);
         }
 
         /************************************************************************************
@@ -593,7 +601,6 @@ namespace _20180407_SpaceInvaders
          * 
          * 
          */
-
         private async void CreaOggettiAsync()
         {
             creati = true;
@@ -605,8 +612,9 @@ namespace _20180407_SpaceInvaders
 
             List<Control> oggetti = await Task<int>.Run(() =>
             {
-
                 List<Control> controlli = new List<Control>();
+
+                byte i, j;
 
                 int cont = 0;
                 int grPixel = 5;
@@ -614,7 +622,7 @@ namespace _20180407_SpaceInvaders
                 // creazione alieni
                 x = 100;
                 y = 110;
-                for (i = (byte) 0; aliens.Count <= nAlieni; i++)
+                for (i = (byte) 0; aliens.Count < nAlieni; i++)
                 {
                     if (i % 7 == 0)
                     {
@@ -645,8 +653,6 @@ namespace _20180407_SpaceInvaders
                 x = 150;
                 y = 450;
 
-                cont = 0;
-
                 for (i = 0; i < altOb; i++)
                 {
                     obstacle.Add(new List<PictureBox>(lungOb));
@@ -674,14 +680,12 @@ namespace _20180407_SpaceInvaders
                         Program.progress++;
                     }
                     y += 5;
-                    cont = 0;
                 }
 
                 // creazione ostacoli
                 x = 575;
                 y = 450;
-              
-                cont = 0;
+
                 for (i = 0; i < altOb; i++)
                 {
                     obstacle1.Add(new List<PictureBox>(lungOb));
@@ -703,7 +707,6 @@ namespace _20180407_SpaceInvaders
                         Program.progress++;
                     }
                     y += 5;
-                    cont = 0;
                 }
                 
                 //creazione vite 
@@ -732,6 +735,8 @@ namespace _20180407_SpaceInvaders
 
             for (int i = 0; i < oggetti.Count; i++)
                 this.Controls.Add(oggetti[i]);
+
+            mostraLivello(100);
         }
     }
 }

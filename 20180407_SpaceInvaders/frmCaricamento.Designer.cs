@@ -36,7 +36,7 @@
             // pgbCaricamento
             // 
             this.pgbCaricamento.Location = new System.Drawing.Point(12, 12);
-            this.pgbCaricamento.Maximum = 3000;
+            this.pgbCaricamento.Maximum = 312;
             this.pgbCaricamento.Name = "pgbCaricamento";
             this.pgbCaricamento.Size = new System.Drawing.Size(412, 36);
             this.pgbCaricamento.TabIndex = 0;
