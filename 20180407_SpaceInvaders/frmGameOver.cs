@@ -22,5 +22,13 @@ namespace _20180407_SpaceInvaders
         {
             Close();
         }
+
+        private void frmGameOver_Load(object sender, EventArgs e)
+        {
+            if(Program.win)
+                BackgroundImage = global::_20180407_SpaceInvaders.Properties.Resources.you_win;
+            else
+                BackgroundImage = global::_20180407_SpaceInvaders.Properties.Resources.game_over;
+        }
     }
 }

@@ -8,7 +8,7 @@ namespace _20180407_SpaceInvaders
 {
     static class Program
     {
-        public static bool max = false;
+        public static bool win = false;
 
         public static string filename = "highscore.txt";
 

@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.timeGameOver = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // frmGameOver
@@ -39,7 +37,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BackgroundImage = global::_20180407_SpaceInvaders.Properties.Resources.game_over;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1102, 596);
+            this.ClientSize = new System.Drawing.Size(818, 456);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGameOver";
@@ -47,13 +45,12 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmGameOver";
+            this.Load += new System.EventHandler(this.frmGameOver_Load);
             this.Click += new System.EventHandler(this.frmGameOver_Click);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Timer timeGameOver;
     }
 }

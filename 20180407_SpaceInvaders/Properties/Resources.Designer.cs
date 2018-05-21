@@ -73,6 +73,16 @@ namespace _20180407_SpaceInvaders.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap back {
+            get {
+                object obj = ResourceManager.GetObject("back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap background {
             get {
                 object obj = ResourceManager.GetObject("background", resourceCulture);
@@ -116,6 +126,16 @@ namespace _20180407_SpaceInvaders.Properties {
         internal static System.Drawing.Bitmap spaceship {
             get {
                 object obj = ResourceManager.GetObject("spaceship", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap you_win {
+            get {
+                object obj = ResourceManager.GetObject("you-win", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
