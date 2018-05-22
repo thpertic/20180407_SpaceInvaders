@@ -37,7 +37,7 @@ namespace _20180407_SpaceInvaders
         private int life;
 
         private string maxName;
-        private int maxScore = 0;
+        private float maxScore = 0;
 
         private int direzioneAlieni = 1;
         private byte rateFuoco = 30;
@@ -47,6 +47,7 @@ namespace _20180407_SpaceInvaders
         private byte[] lungA0 = new byte[lungOb], lungA1 = new byte[lungOb];
 
         private byte level = 1;
+        private float combo = 1f;
 
         List<PictureBox> listaFuoco = new List<PictureBox>();
         List<PictureBox> listaFuocoNemico = new List<PictureBox>();
@@ -81,7 +82,7 @@ namespace _20180407_SpaceInvaders
 
                 string[] file = FileR.ReadLine().Split(' ');
                 maxName = file[0];
-                maxScore = Convert.ToInt32(file[1]);
+                maxScore = Convert.ToSingle(file[1]);
 
                 FileR.Close();
                 // File.Encrypt(Program.filename);
@@ -101,6 +102,7 @@ namespace _20180407_SpaceInvaders
         {
             lblPunteggio.Text = Program.score.ToString();
             lblMassimoPunteggio.Text = maxName + " " + maxScore.ToString();
+            lblCombo.Text = combo.ToString();
 
             // muove la nave
             if(creati)
@@ -124,14 +126,20 @@ namespace _20180407_SpaceInvaders
                     for (j = (byte)alieni.Length; j > 0 && !boolAlieno; j--)
                         if (Colpito(listaFuoco[i - 1], alieni[j - 1]))
                         {
+                            // aumenta la combo finché non si viene colpiti
+                            if(combo < 1.2f)
+                                combo += 0.1f;
+
                             // se il fuoco lo colpisce aumenta lo score
                             Program.score++;
+                            Program.score *= combo;
+
+                            Program.score = (float)Math.Round(Program.score, 0);
+
                             if (Program.score > maxScore)
                             {
                                 maxName = "---";
                                 maxScore = Program.score;
-
-                                // Program.max = true;
                             }
 
                             // elimina tutti gli oggetti che collidono
@@ -212,6 +220,8 @@ namespace _20180407_SpaceInvaders
                     // cerca la collisioni con la navicella
                     if (Colpito(listaFuocoNemico[index], giocatore[0]) && !invincibile)
                     {
+                        combo = 1;
+
                         if (!invincibile)
                             life--;
                         invincibile = true;
@@ -233,9 +243,9 @@ namespace _20180407_SpaceInvaders
                     }
                     for (int j = ostacoli.Length; j > 0 && !boolOstacolo && !boolPlayer; j--)
                     {
-                        if (i > listaFuocoNemico.Count)
+                        if (i - 1 > listaFuocoNemico.Count - 1)
                             index = Convert.ToByte(i - 2);
-                        else if (i < listaFuocoNemico.Count - 2)
+                        else if (listaFuocoNemico.Count == 0)
                             index = i;
                         else
                             index = Convert.ToByte(i - 1);
@@ -328,7 +338,7 @@ namespace _20180407_SpaceInvaders
 
                 // movimento degli alieni
                 for (i = 0; i < alieni.Length; i++)
-                    alieni[i].Left += (int)direzioneAlieni;
+                    alieni[i].Left += direzioneAlieni;
 
                 // test se l'alieno al bordo ha colpito il bordo
                 bool bordo = false;
@@ -396,6 +406,7 @@ namespace _20180407_SpaceInvaders
         {
             timeMove.Stop();
 
+            System.Threading.Thread.Sleep(1000);
             Hide();
 
             Form frmHighScore = new frmHighScore();
@@ -470,9 +481,11 @@ namespace _20180407_SpaceInvaders
         private void moveShip()
         {
             if (_moveLeft)
-                pictSpaceship.Left += -15;
+                if(!(pictSpaceship.Location.X < 0))
+                    pictSpaceship.Left += -15;
 
             if (_moveRight)
+                if(!((pictSpaceship.Location.X + pictSpaceship.Width) > this.Size.Width))
                 pictSpaceship.Left += 15;
         }
         private void frmSpaceInvaders_KeyDown(object sender, KeyEventArgs e)
@@ -523,10 +536,10 @@ namespace _20180407_SpaceInvaders
                 listaFuoco.Add(fire);
 
                 click = false;
-                waitClick(300);
+                waitClick(450);
             }
             else
-                waitClick(100);
+                waitClick(200);
         }
 
         private async void waitClick(int tempo)
@@ -581,10 +594,6 @@ namespace _20180407_SpaceInvaders
                  this.Controls.Remove(fuoco[i]);
             for(int i = 0; i < ostacoli.Length; i++)
                 this.Controls.Remove(ostacoli[i]);
-
-            // cancellazione ulteriore dalle liste del fuoco
-            // listaFuoco.Clear();
-            // listaFuocoNemico.Clear();
         }
 
         /************************************************************************************
@@ -597,6 +606,7 @@ namespace _20180407_SpaceInvaders
         private async void CreaOggettiAsync()
         {
             life = 3;
+            combo = 1;
             creati = false;
 
             Form frmCaricamento = new frmCaricamento();
@@ -699,7 +709,7 @@ namespace _20180407_SpaceInvaders
                 }
                 
                 //creazione vite 
-                x = 650;
+                x = 700;
                 y = 9;
 
                 for(i = 0; i < life; i++)

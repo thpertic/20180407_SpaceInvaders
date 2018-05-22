@@ -51,12 +51,12 @@ namespace _20180407_SpaceInvaders
                     {
                         string[] vs = reader.ReadLine().Split(' ');
 
-                        if (Program.score > Convert.ToInt32(vs[1]) && !scritto)
+                        if (Program.score > Convert.ToSingle(vs[1]) && !scritto)
                         {
                             writer.WriteLine(txtNome.Text + " " + Program.score);
                             scritto = true;
                         }
-                        else if (Program.score == Convert.ToInt32(vs[1]) && !scritto)
+                        else if (Program.score == Convert.ToSingle(vs[1]) && !scritto)
                         {
                             if (String.Compare(txtNome.Text, vs[0]) < 0)
                             {
@@ -91,16 +91,12 @@ namespace _20180407_SpaceInvaders
         private void txtNome_TextChanged(object sender, EventArgs e)
         {
             if (txtNome.Text.Length > 3)
-            {
                 txtNome.Text = txtNome.Text.Substring(0, 3);
-            }
 
             try
             {
                 if (txtNome.Text[txtNome.Text.Length - 1] == ' ')
-                {
                     txtNome.Text = txtNome.Text.Substring(0, txtNome.Text.Length - 2);
-                }
             }
             catch { }
         }

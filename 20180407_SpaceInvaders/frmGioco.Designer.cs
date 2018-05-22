@@ -37,6 +37,8 @@
             this.lblPunteggio = new System.Windows.Forms.Label();
             this.lblMassimoPunteggio = new System.Windows.Forms.Label();
             this.timeColpito = new System.Windows.Forms.Timer(this.components);
+            this.lblComboX = new System.Windows.Forms.Label();
+            this.lblCombo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictSpaceship)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +60,7 @@
             this.lblScore.BackColor = System.Drawing.Color.Transparent;
             this.lblScore.Font = new System.Drawing.Font("Lucida Console", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScore.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblScore.Location = new System.Drawing.Point(34, 9);
+            this.lblScore.Location = new System.Drawing.Point(12, 9);
             this.lblScore.Name = "lblScore";
             this.lblScore.Size = new System.Drawing.Size(74, 20);
             this.lblScore.TabIndex = 39;
@@ -70,7 +72,7 @@
             this.lblHiScore.BackColor = System.Drawing.Color.Transparent;
             this.lblHiScore.Font = new System.Drawing.Font("Lucida Console", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHiScore.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblHiScore.Location = new System.Drawing.Point(399, 9);
+            this.lblHiScore.Location = new System.Drawing.Point(364, 9);
             this.lblHiScore.Name = "lblHiScore";
             this.lblHiScore.Size = new System.Drawing.Size(139, 20);
             this.lblHiScore.TabIndex = 40;
@@ -87,7 +89,7 @@
             this.lblPunteggio.BackColor = System.Drawing.Color.Transparent;
             this.lblPunteggio.Font = new System.Drawing.Font("Lucida Console", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPunteggio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPunteggio.Location = new System.Drawing.Point(115, 9);
+            this.lblPunteggio.Location = new System.Drawing.Point(93, 9);
             this.lblPunteggio.Name = "lblPunteggio";
             this.lblPunteggio.Size = new System.Drawing.Size(22, 20);
             this.lblPunteggio.TabIndex = 41;
@@ -99,7 +101,7 @@
             this.lblMassimoPunteggio.BackColor = System.Drawing.Color.Transparent;
             this.lblMassimoPunteggio.Font = new System.Drawing.Font("Lucida Console", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMassimoPunteggio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblMassimoPunteggio.Location = new System.Drawing.Point(544, 9);
+            this.lblMassimoPunteggio.Location = new System.Drawing.Point(509, 9);
             this.lblMassimoPunteggio.Name = "lblMassimoPunteggio";
             this.lblMassimoPunteggio.Size = new System.Drawing.Size(22, 20);
             this.lblMassimoPunteggio.TabIndex = 42;
@@ -109,12 +111,38 @@
             // 
             this.timeColpito.Tick += new System.EventHandler(this.timeColpito_Tick);
             // 
+            // lblComboX
+            // 
+            this.lblComboX.AutoSize = true;
+            this.lblComboX.BackColor = System.Drawing.Color.Transparent;
+            this.lblComboX.Font = new System.Drawing.Font("Lucida Console", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComboX.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblComboX.Location = new System.Drawing.Point(208, 9);
+            this.lblComboX.Name = "lblComboX";
+            this.lblComboX.Size = new System.Drawing.Size(100, 20);
+            this.lblComboX.TabIndex = 43;
+            this.lblComboX.Text = "COMBO x";
+            // 
+            // lblCombo
+            // 
+            this.lblCombo.AutoSize = true;
+            this.lblCombo.BackColor = System.Drawing.Color.Transparent;
+            this.lblCombo.Font = new System.Drawing.Font("Lucida Console", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCombo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblCombo.Location = new System.Drawing.Point(314, 9);
+            this.lblCombo.Name = "lblCombo";
+            this.lblCombo.Size = new System.Drawing.Size(22, 20);
+            this.lblCombo.TabIndex = 44;
+            this.lblCombo.Text = "0";
+            // 
             // frmSpaceInvaders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(839, 662);
+            this.Controls.Add(this.lblCombo);
+            this.Controls.Add(this.lblComboX);
             this.Controls.Add(this.lblMassimoPunteggio);
             this.Controls.Add(this.lblPunteggio);
             this.Controls.Add(this.lblHiScore);
@@ -144,6 +172,8 @@
         private System.Windows.Forms.Label lblPunteggio;
         private System.Windows.Forms.Label lblMassimoPunteggio;
         private System.Windows.Forms.Timer timeColpito;
+        private System.Windows.Forms.Label lblComboX;
+        private System.Windows.Forms.Label lblCombo;
     }
 }
 

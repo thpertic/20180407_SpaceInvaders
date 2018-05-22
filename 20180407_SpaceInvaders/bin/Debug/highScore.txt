@@ -1,10 +1,3 @@
-Tho 72
-aaa 71
-AAA 20
-bbb 19
-Cia 17
-ddd 13
-ttt 12
-Tho 11
-Tho 10
-Tho 9
+aaa 5352
+Tho 121
+aaa 0

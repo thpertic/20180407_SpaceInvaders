@@ -117,5 +117,7 @@ F:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Deb
 F:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmStart.resources
 G:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmCaricamento.resources
 G:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmGameOver.resources
+E:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmCaricamento.resources
+E:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmGameOver.resources
 G:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csprojAssemblyReference.cache
 G:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csproj.CoreCompileInputs.cache

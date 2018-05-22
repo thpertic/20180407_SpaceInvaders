@@ -29,6 +29,8 @@ namespace _20180407_SpaceInvaders
                 BackgroundImage = global::_20180407_SpaceInvaders.Properties.Resources.you_win;
             else
                 BackgroundImage = global::_20180407_SpaceInvaders.Properties.Resources.game_over;
+
+            System.Threading.Thread.Sleep(300);
         }
     }
 }

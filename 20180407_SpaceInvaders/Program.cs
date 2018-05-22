@@ -12,7 +12,7 @@ namespace _20180407_SpaceInvaders
 
         public static string filename = "highscore.txt";
 
-        public static int score = 0;
+        public static float score = 0f;
         public static int progress;
         /// <summary>
         /// Punto di ingresso principale dell'applicazione.
