@@ -73,6 +73,26 @@ namespace _20180407_SpaceInvaders.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap alien1 {
+            get {
+                object obj = ResourceManager.GetObject("alien1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap alien2 {
+            get {
+                object obj = ResourceManager.GetObject("alien2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap back {
             get {
                 object obj = ResourceManager.GetObject("back", resourceCulture);
@@ -126,6 +146,16 @@ namespace _20180407_SpaceInvaders.Properties {
         internal static System.Drawing.Bitmap spaceship {
             get {
                 object obj = ResourceManager.GetObject("spaceship", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap specialShip {
+            get {
+                object obj = ResourceManager.GetObject("specialShip", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

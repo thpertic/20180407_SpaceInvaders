@@ -23,7 +23,7 @@ namespace _20180407_SpaceInvaders
         private byte i;
         private byte j;
 
-        private const byte nAlieni = 21;
+        private const byte nAlieni = 43;
         private const byte lungOb = 18, altOb = 8;
 
         private bool _moveLeft;
@@ -32,6 +32,7 @@ namespace _20180407_SpaceInvaders
         private bool click = true;
         private bool creati;
         private bool invincibile = false;
+        private bool presentShip = false;
 
         private int x, y;
         private int life;
@@ -39,20 +40,24 @@ namespace _20180407_SpaceInvaders
         private string maxName;
         private float maxScore = 0;
 
+        private int direzioneSpecialShip = 10;
         private int direzioneAlieni = 1;
-        private byte rateFuoco = 30;
+        private byte rateFuoco = 25;
 
         // lunghezze "logiche" degli ostacoli
         private byte[] lung0 = new byte[lungOb], lung1 = new byte[lungOb];
         private byte[] lungA0 = new byte[lungOb], lungA1 = new byte[lungOb];
 
         private byte level = 1;
-        private float combo = 1f;
+        // tolta la combo a causa dei punteggi troppo elevati
+        // private float combo = 1f;
 
+        PictureBox specialShip;
+        
         List<PictureBox> listaFuoco = new List<PictureBox>();
         List<PictureBox> listaFuocoNemico = new List<PictureBox>();
 
-        List<Control> aliens = new List<Control>(nAlieni);
+        List<PictureBox> aliens = new List<PictureBox>(nAlieni);
 
         List<List<PictureBox>> obstacle = new List<List<PictureBox>>(lungOb);
         List<List<PictureBox>> obstacle1 = new List<List<PictureBox>>(lungOb);
@@ -102,7 +107,7 @@ namespace _20180407_SpaceInvaders
         {
             lblPunteggio.Text = Program.score.ToString();
             lblMassimoPunteggio.Text = maxName + " " + maxScore.ToString();
-            lblCombo.Text = combo.ToString();
+            // lblCombo.Text = combo.ToString();
 
             // muove la nave
             if(creati)
@@ -122,19 +127,44 @@ namespace _20180407_SpaceInvaders
                 {
                     bool boolOstacolo = false;
 
+                    if (presentShip)
+                    {
+                        if (Colpito(listaFuoco[i - 1], specialShip))
+                        {
+                            Program.score += 10;
+                            presentShip = false;
+
+                            specialShip.Visible = false;
+                            specialShip.Enabled = false;
+
+                            timeSpecialShip.Stop();
+                            
+                            if (Program.score > maxScore)
+                            {
+                                maxName = "---";
+                                maxScore = Program.score;
+                            }
+
+                            eliminaOggetto(listaFuoco[i - 1]);
+                            listaFuoco.Remove(listaFuoco[i - 1]);
+
+                            break;
+                        }
+                    }
                     // testa se uno degli alieni viene colpito
                     for (j = (byte)alieni.Length; j > 0 && !boolAlieno; j--)
                         if (Colpito(listaFuoco[i - 1], alieni[j - 1]))
                         {
                             // aumenta la combo finché non si viene colpiti
-                            if(combo < 1.2f)
-                                combo += 0.1f;
+                            // if(combo < 1.2f)
+                            //     combo += 0.1f;
 
                             // se il fuoco lo colpisce aumenta lo score
-                            Program.score++;
-                            Program.score *= combo;
+                            // lo score dipende dalla forma dell'alieno
+                            Program.score += tipoAlieno(alieni[j - 1]);
 
-                            Program.score = (float)Math.Round(Program.score, 0);
+                            // Program.score *= combo;
+                            // Program.score = (float)Math.Round(Program.score, 0);
 
                             if (Program.score > maxScore)
                             {
@@ -146,7 +176,7 @@ namespace _20180407_SpaceInvaders
                             eliminaOggetto(alieni[j - 1]);
                             eliminaOggetto(listaFuoco[i - 1]);
 
-                            aliens.Remove(alieni[j - 1]);
+                            aliens.Remove((PictureBox)alieni[j - 1]);
                             listaFuoco.Remove(listaFuoco[i - 1]);
 
                             boolAlieno = true;
@@ -210,17 +240,20 @@ namespace _20180407_SpaceInvaders
                     bool boolPlayer = false;
                     bool boolOstacolo = false;
 
-                    if ((i - 1) > listaFuocoNemico.Count - 1)
+                    if (listaFuocoNemico.Count == 0)
+                    {
+                        // index = i;
+                        break;
+                    }
+                    else if ((i - 1) > listaFuocoNemico.Count - 1)
                         index = Convert.ToByte(i - 2);
-                    else if (listaFuocoNemico.Count == 0)
-                        index = i;
                     else
                         index = Convert.ToByte(i - 1);
 
                     // cerca la collisioni con la navicella
                     if (Colpito(listaFuocoNemico[index], giocatore[0]) && !invincibile)
                     {
-                        combo = 1;
+                        // combo = 1;
 
                         if (!invincibile)
                             life--;
@@ -310,12 +343,23 @@ namespace _20180407_SpaceInvaders
                     this.Controls.Add(fuocoNemico);
                     listaFuocoNemico.Add(fuocoNemico);
                 }
+                // mostra la nave bonus e la fa muovere
+                if(stopwatch.ElapsedTicks % 200 == 0 && !presentShip && stopwatch.ElapsedTicks != 0)
+                {
+                    presentShip = true;
 
+                    specialShip.Visible = true;
+                    specialShip.Enabled = true;
+
+                    timeSpecialShip.Start();
+                    // moveSpecialShip();
+                }
+                
                 // controllo dell'alieno piu esterno a seconda della direzioneAlieni
                 Control alienoBordo = alieni[0];
                 int m = alieni[0].Location.X;
 
-                // trova l'alieno al bordo
+                // trova l'alieno al bordoa
                 for (i = 1; i < alieni.Length; i++)
                 {
                     if (direzioneAlieni < 0)
@@ -381,7 +425,60 @@ namespace _20180407_SpaceInvaders
                     fine();
             }
         }
-        
+
+        private byte tipoAlieno(Control alieno)
+        {
+            for (int i = 0; i < aliens.Count; i++)
+            {
+                if(alieno == aliens[i])
+                {
+                    if (compare((Bitmap)aliens[i].Image, global::_20180407_SpaceInvaders.Properties.Resources.alien1))
+                        return 3;
+                    else if (compare((Bitmap)aliens[i].Image, global::_20180407_SpaceInvaders.Properties.Resources.alien))
+                        return 2;
+                    else if (compare((Bitmap)aliens[i].Image, global::_20180407_SpaceInvaders.Properties.Resources.alien2))
+                        return 1;
+                }
+            }
+            return 0;
+        }
+
+        /// <summary>
+        /// Compare every pixel of the image.
+        /// It may be a bottleneck but it works.
+        /// </summary>
+        /// <param name="bmp1"></param>
+        /// <param name="bmp2"></param>
+        /// <returns></returns>
+        private bool compare(Bitmap bmp1, Bitmap bmp2)
+        {
+            bool equals = true;
+            bool flag = true;  //Inner loop isn't broken
+
+            //Test to see if we have the same size of image
+            if (bmp1.Size == bmp2.Size)
+            {
+                for (int x = 0; x < bmp1.Width; ++x)
+                {
+                    for (int y = 0; y < bmp1.Height; ++y)
+                    {
+                        if (bmp1.GetPixel(x, y) != bmp2.GetPixel(x, y))
+                        {
+                            equals = false;
+                            flag = false;
+                            break;
+                        }
+                    }
+                    if (!flag)
+                        break;
+                }
+            }
+            else
+                equals = false;
+
+            return equals;
+        }
+
         private void intermittenza()
         {
             timeColpito.Start();
@@ -406,7 +503,7 @@ namespace _20180407_SpaceInvaders
         {
             timeMove.Stop();
 
-            System.Threading.Thread.Sleep(1000);
+            System.Threading.Thread.Sleep(800);
             Hide();
 
             Form frmHighScore = new frmHighScore();
@@ -486,7 +583,7 @@ namespace _20180407_SpaceInvaders
 
             if (_moveRight)
                 if(!((pictSpaceship.Location.X + pictSpaceship.Width) > this.Size.Width))
-                pictSpaceship.Left += 15;
+                    pictSpaceship.Left += 15;
         }
         private void frmSpaceInvaders_KeyDown(object sender, KeyEventArgs e)
         {
@@ -542,6 +639,23 @@ namespace _20180407_SpaceInvaders
                 waitClick(200);
         }
 
+        /// <summary>
+        /// Movimento della nave bonus.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void timeSpecialShip_Tick(object sender, EventArgs e)
+        {
+            if (!(specialShip.Location.X >= 10 && specialShip.Location.X + specialShip.Width <= Width - 10))
+                direzioneSpecialShip = -direzioneSpecialShip;
+
+            specialShip.Left += direzioneSpecialShip;
+        }
+
+        /// <summary>
+        /// Aspetta prima di riabilitare il click
+        /// </summary>
+        /// <param name="tempo"></param>
         private async void waitClick(int tempo)
         {
             int nuovoThread = await Task<int>.Run(() =>
@@ -606,7 +720,7 @@ namespace _20180407_SpaceInvaders
         private async void CreaOggettiAsync()
         {
             life = 3;
-            combo = 1;
+            // combo = 1;
             creati = false;
 
             Form frmCaricamento = new frmCaricamento();
@@ -619,27 +733,44 @@ namespace _20180407_SpaceInvaders
 
                 byte i, j;
 
-                int cont = 0;
-                int grPixel = 5;
+                byte cont = 0;
+                const byte grPixel = 5;
 
                 // creazione alieni
                 x = 100;
                 y = 110;
-                for (i = (byte) 0; aliens.Count < nAlieni; i++)
+
+                Image image = global::_20180407_SpaceInvaders.Properties.Resources.alien1;
+                Size size = new Size(32, 25);
+
+                for (i = (byte) 0; aliens.Count <= nAlieni; i++)
                 {
-                    if (i % 7 == 0)
+                    if (i % 11 == 0 && i != 0)
                     {
                         y += 50;
                         cont = 0;
+
+                        // cambio immagine alieno
+                        switch (y)
+                        {
+                            case 160:
+                                image = global::_20180407_SpaceInvaders.Properties.Resources.alien;
+                                size = new Size(41, 28);
+                                break;
+                            case 260:
+                                image = global::_20180407_SpaceInvaders.Properties.Resources.alien2;
+                                size = new Size(35, 27);
+                                break;
+                        }
                     }
 
                     var alien = new PictureBox
                     {
                         Name = "alien",
                         BackColor = Color.Transparent,
-                        Image = global::_20180407_SpaceInvaders.Properties.Resources.alien,
-                        Location = new Point(x + cont * 100, y),
-                        Size = new Size(41, 28),
+                        Image = image,
+                        Location = new Point(x + cont * 50, y),
+                        Size = size,
                         SizeMode = PictureBoxSizeMode.StretchImage
                     };
                     alien.Click += new EventHandler(PictAlien36_Click);
@@ -728,6 +859,27 @@ namespace _20180407_SpaceInvaders
                     controlli.Add(vita);
                     Program.progress++;
                 }
+
+                x = 10;
+                y = 50;
+
+                // creazione della navicella speciale
+                var nave = new PictureBox
+                {
+                    Name = "SpecialShip",
+                    BackColor = Color.Transparent,
+                    Location = new Point(x, y),
+                    Size = new Size(50, 22),
+                    SizeMode = PictureBoxSizeMode.StretchImage,
+                    Visible = false,
+                    Image = global::_20180407_SpaceInvaders.Properties.Resources.specialShip, 
+                    Enabled = false
+                };
+                nave.Click += new EventHandler(PictAlien36_Click);
+
+                specialShip = nave;
+                Program.progress++;
+                controlli.Add(nave);
 
                 return controlli;
             });

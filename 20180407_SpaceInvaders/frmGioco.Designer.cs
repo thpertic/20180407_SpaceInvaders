@@ -30,29 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSpaceInvaders));
-            this.pictSpaceship = new System.Windows.Forms.PictureBox();
             this.lblScore = new System.Windows.Forms.Label();
             this.lblHiScore = new System.Windows.Forms.Label();
             this.timeMove = new System.Windows.Forms.Timer(this.components);
             this.lblPunteggio = new System.Windows.Forms.Label();
             this.lblMassimoPunteggio = new System.Windows.Forms.Label();
             this.timeColpito = new System.Windows.Forms.Timer(this.components);
-            this.lblComboX = new System.Windows.Forms.Label();
-            this.lblCombo = new System.Windows.Forms.Label();
+            this.pictSpaceship = new System.Windows.Forms.PictureBox();
+            this.timeSpecialShip = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictSpaceship)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictSpaceship
-            // 
-            this.pictSpaceship.BackColor = System.Drawing.Color.Transparent;
-            this.pictSpaceship.Image = global::_20180407_SpaceInvaders.Properties.Resources.spaceship;
-            this.pictSpaceship.Location = new System.Drawing.Point(391, 609);
-            this.pictSpaceship.Name = "pictSpaceship";
-            this.pictSpaceship.Size = new System.Drawing.Size(36, 41);
-            this.pictSpaceship.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictSpaceship.TabIndex = 0;
-            this.pictSpaceship.TabStop = false;
-            this.pictSpaceship.Click += new System.EventHandler(this.PictAlien36_Click);
             // 
             // lblScore
             // 
@@ -111,29 +98,22 @@
             // 
             this.timeColpito.Tick += new System.EventHandler(this.timeColpito_Tick);
             // 
-            // lblComboX
+            // pictSpaceship
             // 
-            this.lblComboX.AutoSize = true;
-            this.lblComboX.BackColor = System.Drawing.Color.Transparent;
-            this.lblComboX.Font = new System.Drawing.Font("Lucida Console", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblComboX.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblComboX.Location = new System.Drawing.Point(208, 9);
-            this.lblComboX.Name = "lblComboX";
-            this.lblComboX.Size = new System.Drawing.Size(100, 20);
-            this.lblComboX.TabIndex = 43;
-            this.lblComboX.Text = "COMBO x";
+            this.pictSpaceship.BackColor = System.Drawing.Color.Transparent;
+            this.pictSpaceship.Image = global::_20180407_SpaceInvaders.Properties.Resources.spaceship;
+            this.pictSpaceship.Location = new System.Drawing.Point(391, 609);
+            this.pictSpaceship.Name = "pictSpaceship";
+            this.pictSpaceship.Size = new System.Drawing.Size(36, 41);
+            this.pictSpaceship.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictSpaceship.TabIndex = 0;
+            this.pictSpaceship.TabStop = false;
+            this.pictSpaceship.Click += new System.EventHandler(this.PictAlien36_Click);
             // 
-            // lblCombo
+            // timeSpecialShip
             // 
-            this.lblCombo.AutoSize = true;
-            this.lblCombo.BackColor = System.Drawing.Color.Transparent;
-            this.lblCombo.Font = new System.Drawing.Font("Lucida Console", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCombo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCombo.Location = new System.Drawing.Point(314, 9);
-            this.lblCombo.Name = "lblCombo";
-            this.lblCombo.Size = new System.Drawing.Size(22, 20);
-            this.lblCombo.TabIndex = 44;
-            this.lblCombo.Text = "0";
+            this.timeSpecialShip.Interval = 10;
+            this.timeSpecialShip.Tick += new System.EventHandler(this.timeSpecialShip_Tick);
             // 
             // frmSpaceInvaders
             // 
@@ -141,8 +121,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(839, 662);
-            this.Controls.Add(this.lblCombo);
-            this.Controls.Add(this.lblComboX);
             this.Controls.Add(this.lblMassimoPunteggio);
             this.Controls.Add(this.lblPunteggio);
             this.Controls.Add(this.lblHiScore);
@@ -172,8 +150,7 @@
         private System.Windows.Forms.Label lblPunteggio;
         private System.Windows.Forms.Label lblMassimoPunteggio;
         private System.Windows.Forms.Timer timeColpito;
-        private System.Windows.Forms.Label lblComboX;
-        private System.Windows.Forms.Label lblCombo;
+        private System.Windows.Forms.Timer timeSpecialShip;
     }
 }
 
