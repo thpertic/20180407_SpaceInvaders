@@ -1,6 +1,6 @@
 ﻿namespace _20180407_SpaceInvaders
 {
-    partial class frmSpaceInvaders
+    partial class FrmSpaceInvaders
     {
         /// <summary>
         /// Variabile di progettazione necessaria.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSpaceInvaders));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSpaceInvaders));
             this.lblScore = new System.Windows.Forms.Label();
             this.lblHiScore = new System.Windows.Forms.Label();
             this.timeMove = new System.Windows.Forms.Timer(this.components);
@@ -68,7 +68,7 @@
             // timeMove
             // 
             this.timeMove.Interval = 50;
-            this.timeMove.Tick += new System.EventHandler(this.timeMove_Tick);
+            this.timeMove.Tick += new System.EventHandler(this.TimeMove_Tick);
             // 
             // lblPunteggio
             // 
@@ -96,7 +96,7 @@
             // 
             // timeColpito
             // 
-            this.timeColpito.Tick += new System.EventHandler(this.timeColpito_Tick);
+            this.timeColpito.Tick += new System.EventHandler(this.TimeColpito_Tick);
             // 
             // pictSpaceship
             // 
@@ -113,7 +113,7 @@
             // timeSpecialShip
             // 
             this.timeSpecialShip.Interval = 10;
-            this.timeSpecialShip.Tick += new System.EventHandler(this.timeSpecialShip_Tick);
+            this.timeSpecialShip.Tick += new System.EventHandler(this.TimeSpecialShip_Tick);
             // 
             // frmSpaceInvaders
             // 
@@ -131,10 +131,10 @@
             this.Name = "frmSpaceInvaders";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Space Invaders";
-            this.Load += new System.EventHandler(this.frmSpaceInvaders_Load);
+            this.Load += new System.EventHandler(this.FrmSpaceInvaders_Load);
             this.Click += new System.EventHandler(this.PictAlien36_Click);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmSpaceInvaders_KeyDown);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmSpaceInvaders_KeyUp);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmSpaceInvaders_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmSpaceInvaders_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.pictSpaceship)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

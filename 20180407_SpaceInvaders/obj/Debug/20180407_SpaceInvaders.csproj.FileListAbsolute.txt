@@ -46,7 +46,6 @@ E:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\bin\Deb
 C:\Users\Thomas\Desktop\20180407_SpaceInvaders\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.exe.config
 C:\Users\Thomas\Desktop\20180407_SpaceInvaders\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.exe
 C:\Users\Thomas\Desktop\20180407_SpaceInvaders\20180407_SpaceInvaders\bin\Debug\20180407_SpaceInvaders.pdb
-C:\Users\Thomas\Desktop\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csprojResolveAssemblyReference.cache
 C:\Users\Thomas\Desktop\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmSpaceInvaders.resources
 C:\Users\Thomas\Desktop\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.Properties.Resources.resources
 C:\Users\Thomas\Desktop\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csproj.GenerateResource.cache
@@ -119,5 +118,9 @@ G:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Deb
 G:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmGameOver.resources
 E:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmCaricamento.resources
 E:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmGameOver.resources
-G:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csprojAssemblyReference.cache
-G:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csproj.CoreCompileInputs.cache
+G:\Scuola\Informatica 3\C#\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csprojResolveAssemblyReference.cache
+C:\Users\Thomas\Desktop\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\20180407_SpaceInvaders.csprojAssemblyReference.cache
+C:\Users\Thomas\Desktop\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmCaricamento.resources
+C:\Users\Thomas\Desktop\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmGameOver.resources
+C:\Users\Thomas\Desktop\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmHighScore.resources
+C:\Users\Thomas\Desktop\20180407_SpaceInvaders\20180407_SpaceInvaders\obj\Debug\_20180407_SpaceInvaders.frmStart.resources

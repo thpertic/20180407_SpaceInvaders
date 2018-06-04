@@ -22,7 +22,7 @@ namespace _20180407_SpaceInvaders
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSpaceInvaders());
+            Application.Run(new FrmSpaceInvaders());
         }
     }
 }

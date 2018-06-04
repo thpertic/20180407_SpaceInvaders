@@ -14,7 +14,7 @@ using System.Diagnostics;
 
 namespace _20180407_SpaceInvaders
 {
-    public partial class frmSpaceInvaders : Form
+    public partial class FrmSpaceInvaders : Form
     {
         // conto intermittenza
         private byte nFlash;
@@ -68,13 +68,13 @@ namespace _20180407_SpaceInvaders
         Stopwatch swColpito = new Stopwatch();
 
         /**************************************** INIZIO PROGRAMMA ****************************************/
-        public frmSpaceInvaders()
+        public FrmSpaceInvaders()
         {
             InitializeComponent();
-            timeMove.Tick += timeMove_Tick;
+            timeMove.Tick += TimeMove_Tick;
         }
 
-        private void frmSpaceInvaders_Load(object sender, EventArgs e)
+        private void FrmSpaceInvaders_Load(object sender, EventArgs e)
         {
             Form frmStart = new frmStart();
             if (frmStart.ShowDialog() != DialogResult.OK)
@@ -103,7 +103,7 @@ namespace _20180407_SpaceInvaders
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void timeMove_Tick(object sender, EventArgs e)
+        private void TimeMove_Tick(object sender, EventArgs e)
         {
             lblPunteggio.Text = Program.score.ToString();
             lblMassimoPunteggio.Text = maxName + " " + maxScore.ToString();
@@ -111,9 +111,9 @@ namespace _20180407_SpaceInvaders
 
             // muove la nave
             if(creati)
-                moveShip();
+                MoveShip();
 
-            stampaVita(true);
+            StampaVita(true);
 
             Control[] giocatore = this.Controls.Find("pictSpaceship", true);
             Control[] alieni = this.Controls.Find("alien", true);
@@ -145,7 +145,7 @@ namespace _20180407_SpaceInvaders
                                 maxScore = Program.score;
                             }
 
-                            eliminaOggetto(listaFuoco[i - 1]);
+                            EliminaOggetto(listaFuoco[i - 1]);
                             listaFuoco.Remove(listaFuoco[i - 1]);
 
                             break;
@@ -161,7 +161,7 @@ namespace _20180407_SpaceInvaders
 
                             // se il fuoco lo colpisce aumenta lo score
                             // lo score dipende dalla forma dell'alieno
-                            Program.score += tipoAlieno(alieni[j - 1]);
+                            Program.score += TipoAlieno(alieni[j - 1]);
 
                             // Program.score *= combo;
                             // Program.score = (float)Math.Round(Program.score, 0);
@@ -173,8 +173,8 @@ namespace _20180407_SpaceInvaders
                             }
 
                             // elimina tutti gli oggetti che collidono
-                            eliminaOggetto(alieni[j - 1]);
-                            eliminaOggetto(listaFuoco[i - 1]);
+                            EliminaOggetto(alieni[j - 1]);
+                            EliminaOggetto(listaFuoco[i - 1]);
 
                             aliens.Remove((PictureBox)alieni[j - 1]);
                             listaFuoco.Remove(listaFuoco[i - 1]);
@@ -212,8 +212,8 @@ namespace _20180407_SpaceInvaders
                                         }
                             }
                             // elimina tutti gli oggetti che collidono
-                            eliminaOggetto(ostacoli[j - 1]);
-                            eliminaOggetto(listaFuoco[i - 1]);
+                            EliminaOggetto(ostacoli[j - 1]);
+                            EliminaOggetto(listaFuoco[i - 1]);
 
                             listaFuoco.Remove(listaFuoco[i - 1]);
                             boolOstacolo = true;
@@ -223,7 +223,7 @@ namespace _20180407_SpaceInvaders
                         listaFuoco[i - 1].Top -= 15;
 
                         if (listaFuoco[i - 1] != null && listaFuoco[i - 1].Location.Y < 0)
-                            eliminaOggetto(listaFuoco[i - 1]);
+                            EliminaOggetto(listaFuoco[i - 1]);
                     }
 
                     // per trillo <3 :-*
@@ -261,15 +261,15 @@ namespace _20180407_SpaceInvaders
 
                         if (life == 0)
                         {
-                            fine();
+                            Fine();
                             Application.Exit();
                         }
-                        stampaVita(false);
+                        StampaVita(false);
 
                         // invincibilità - respawn a intermittenza nave
-                        intermittenza();
+                        Intermittenza();
 
-                        eliminaOggetto(listaFuocoNemico[index]);
+                        EliminaOggetto(listaFuocoNemico[index]);
                         listaFuocoNemico.Remove(listaFuocoNemico[index]);
 
                         boolPlayer = true;
@@ -286,8 +286,8 @@ namespace _20180407_SpaceInvaders
                         if (Colpito(listaFuocoNemico[index], ostacoli[j - 1]))
                         {
                             // elimina tutti gli oggetti che collidono
-                            eliminaOggetto(ostacoli[j - 1]);
-                            eliminaOggetto(listaFuocoNemico[index]);
+                            EliminaOggetto(ostacoli[j - 1]);
+                            EliminaOggetto(listaFuocoNemico[index]);
 
                             if (ostacoli[j - 1].Location.X < this.Width)
                             {
@@ -323,7 +323,7 @@ namespace _20180407_SpaceInvaders
                         listaFuocoNemico[index].Top += 15;
 
                         if (listaFuocoNemico[index] != null && listaFuocoNemico[index].Location.Y > this.Size.Height)
-                            eliminaOggetto(listaFuocoNemico[index]);
+                            EliminaOggetto(listaFuocoNemico[index]);
                     }
                 }
                 if (stopwatch.ElapsedMilliseconds % rateFuoco == 0)
@@ -401,7 +401,7 @@ namespace _20180407_SpaceInvaders
                 if (bordo)
                 {
                     for (i = 0; i < alieni.Length; i++)
-                        spostamento(alieni[i]);
+                        Spostamento(alieni[i]);
                     direzioneAlieni = -direzioneAlieni;
                 }
             }
@@ -422,69 +422,36 @@ namespace _20180407_SpaceInvaders
                     CreaOggettiAsync();
                 }
                 else
-                    fine();
+                {
+                    Program.win = true;
+                    Fine();
+                }
             }
         }
 
-        private byte tipoAlieno(Control alieno)
+        private byte TipoAlieno(Control alieno)
         {
             for (int i = 0; i < aliens.Count; i++)
             {
                 if(alieno == aliens[i])
                 {
-                    if (compare((Bitmap)aliens[i].Image, global::_20180407_SpaceInvaders.Properties.Resources.alien1))
+                    if (alieno.Size == (new Size(32, 25)))
                         return 3;
-                    else if (compare((Bitmap)aliens[i].Image, global::_20180407_SpaceInvaders.Properties.Resources.alien))
+                    else if (alieno.Size == (new Size(41, 28)))
                         return 2;
-                    else if (compare((Bitmap)aliens[i].Image, global::_20180407_SpaceInvaders.Properties.Resources.alien2))
+                    else if (alieno.Size == (new Size(35, 27)))
                         return 1;
                 }
             }
             return 0;
         }
 
-        /// <summary>
-        /// Compare every pixel of the image.
-        /// It may be a bottleneck but it works.
-        /// </summary>
-        /// <param name="bmp1"></param>
-        /// <param name="bmp2"></param>
-        /// <returns></returns>
-        private bool compare(Bitmap bmp1, Bitmap bmp2)
-        {
-            bool equals = true;
-            bool flag = true;  //Inner loop isn't broken
-
-            //Test to see if we have the same size of image
-            if (bmp1.Size == bmp2.Size)
-            {
-                for (int x = 0; x < bmp1.Width; ++x)
-                {
-                    for (int y = 0; y < bmp1.Height; ++y)
-                    {
-                        if (bmp1.GetPixel(x, y) != bmp2.GetPixel(x, y))
-                        {
-                            equals = false;
-                            flag = false;
-                            break;
-                        }
-                    }
-                    if (!flag)
-                        break;
-                }
-            }
-            else
-                equals = false;
-
-            return equals;
-        }
-
-        private void intermittenza()
+        private void Intermittenza()
         {
             timeColpito.Start();
         }
 
-        private void timeColpito_Tick(object sender, EventArgs e)
+        private void TimeColpito_Tick(object sender, EventArgs e)
         {
             pictSpaceship.Visible = !pictSpaceship.Visible;
             nFlash++;
@@ -499,7 +466,7 @@ namespace _20180407_SpaceInvaders
             }
         }
 
-        private void fine()
+        private void Fine()
         {
             timeMove.Stop();
 
@@ -512,7 +479,7 @@ namespace _20180407_SpaceInvaders
             timeMove.Start();
         }
 
-        private void spostamento(Control alieno)
+        private void Spostamento(Control alieno)
         {
             if (alieno.Location.Y + alieno.Size.Height < obstacle[0][0].Location.Y)
                 alieno.Top += 20;
@@ -529,13 +496,13 @@ namespace _20180407_SpaceInvaders
             }
         }
 
-        private void eliminaOggetto(Control oggetto)
+        private void EliminaOggetto(Control oggetto)
         {
             this.Controls.Remove(oggetto);
             oggetto.Dispose();
         }
 
-        private void stampaVita(bool condizione)
+        private void StampaVita(bool condizione)
         {
             Control[] vite = this.Controls.Find("life", true);
 
@@ -575,7 +542,7 @@ namespace _20180407_SpaceInvaders
         /********************************************
          * Vari metodi per il movimento della nave
          */
-        private void moveShip()
+        private void MoveShip()
         {
             if (_moveLeft)
                 if(!(pictSpaceship.Location.X < 0))
@@ -585,7 +552,7 @@ namespace _20180407_SpaceInvaders
                 if(!((pictSpaceship.Location.X + pictSpaceship.Width) > this.Size.Width))
                     pictSpaceship.Left += 15;
         }
-        private void frmSpaceInvaders_KeyDown(object sender, KeyEventArgs e)
+        private void FrmSpaceInvaders_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.A)
             {
@@ -604,7 +571,7 @@ namespace _20180407_SpaceInvaders
                     _moveRight = true;
             }
         }
-        private void frmSpaceInvaders_KeyUp(object sender, KeyEventArgs e)
+        private void FrmSpaceInvaders_KeyUp(object sender, KeyEventArgs e)
         {
             _moveLeft = false;
             _moveRight = false;
@@ -633,10 +600,10 @@ namespace _20180407_SpaceInvaders
                 listaFuoco.Add(fire);
 
                 click = false;
-                waitClick(450);
+                WaitClick(5000);
             }
-            else
-                waitClick(200);
+            // else
+            //     waitClick(1000);
         }
 
         /// <summary>
@@ -644,10 +611,18 @@ namespace _20180407_SpaceInvaders
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void timeSpecialShip_Tick(object sender, EventArgs e)
+        private void TimeSpecialShip_Tick(object sender, EventArgs e)
         {
-            if (!(specialShip.Location.X >= 10 && specialShip.Location.X + specialShip.Width <= Width - 10))
+            if (!(specialShip.Location.X >= -10 && specialShip.Location.X + specialShip.Width <= Width + 10))
+            {
                 direzioneSpecialShip = -direzioneSpecialShip;
+                timeSpecialShip.Stop();
+
+                specialShip.Visible = false;
+                specialShip.Enabled = false;
+
+                presentShip = false;
+            }
 
             specialShip.Left += direzioneSpecialShip;
         }
@@ -656,7 +631,7 @@ namespace _20180407_SpaceInvaders
         /// Aspetta prima di riabilitare il click
         /// </summary>
         /// <param name="tempo"></param>
-        private async void waitClick(int tempo)
+        private async void WaitClick(int tempo)
         {
             int nuovoThread = await Task<int>.Run(() =>
                 {
@@ -670,7 +645,7 @@ namespace _20180407_SpaceInvaders
         /// Fissa la label con il numero del livello a schermo.
         /// </summary>
         /// <param name="tempo"></param>
-        private async void mostraLivello(int tempo)
+        private async void MostraLivello(int tempo)
         {
             var l = new Label
             {
@@ -887,7 +862,7 @@ namespace _20180407_SpaceInvaders
             for (int i = 0; i < oggetti.Count; i++)
                 this.Controls.Add(oggetti[i]);
 
-            mostraLivello(100);
+            MostraLivello(100);
 
             creati = true;
         }
